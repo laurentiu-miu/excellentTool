@@ -1,5 +1,7 @@
 package ro.miul.model;
 
+import ro.miul.utils.annotations.EntityName;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -8,6 +10,7 @@ import javax.persistence.ManyToOne;
  * @version createdOn: 12/28/15
  */
 @Entity
+@EntityName("second")
 public class SecondEntity extends BaseEntity {
 
     private String extraProperty;

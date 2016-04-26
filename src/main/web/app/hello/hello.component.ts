@@ -1,10 +1,11 @@
 'use strict';
 
-import {Component, Inject} from 'angular2/core';
-import {CORE_DIRECTIVES} from 'angular2/common';
-import {Response} from 'angular2/http';
-import {RouterLink} from 'angular2/router';
-import {HelloService} from './hello.service';
+import {Component, Inject} from "angular2/core";
+import {CORE_DIRECTIVES} from "angular2/common";
+import {RouterLink} from "angular2/router";
+import {HelloService} from "./hello.service";
+import {Demo} from "./Demo";
+
 
 @Component({
     selector: 'test',
@@ -16,13 +17,15 @@ export class HelloComponent {
 
     private jsonResponse: string;
     private message: string;
+    private demos:Array<Demo>;
 
     constructor(@Inject(HelloService) private helloService: HelloService) {}
 
     ngOnInit() {
         this.helloService.getTest().subscribe(
             data => {this.jsonResponse = JSON.stringify(data),
-                     this.message = data.test.message},
+                this.demos = data
+            },
             () => console.log('../test/get/json returned: \n' + this.jsonResponse)
         );
     }

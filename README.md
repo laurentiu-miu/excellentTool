@@ -4,6 +4,7 @@ $ gradle clean build
 $ gradle npminstall
 $ gradle gulp_build
 $ gradle bootRun
+$ gradle bootRun --debug-jvm
 using browser, navigate to localhost:8080
 
 front-end dev

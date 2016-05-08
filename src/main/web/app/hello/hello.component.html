@@ -1,11 +1,17 @@
-<div><h3>JSON</h3><div>{{jsonResponse}}</div></div>
-<div><h3>message</h3><div>{{message}}</div></div>
-<div class="jumbotron" *ngFor="#d of demos">
-    <h1>{{d.id}}</h1>
-    <p>{{d.description}}</p>
-    <p>{{d.updtimestamp | date:'dd MM yyyy'}}</p>
-</div>
-<div>
-    <h2>nav</h2>
-    <a [routerLink]="['HomePage']" class="nav-button">Home Page</a>
-</div>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>updtimestamp</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="#d of demos" (click)="onSelect(d)">
+        <td>{{d.id}}</td>
+        <td>{{d.description}}</td>
+        <td>{{d.updtimestamp | date:'dd MM yyyy'}}</td>
+    </tr>
+    </tbody>
+</table>
+

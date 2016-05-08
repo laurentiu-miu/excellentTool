@@ -1,15 +1,15 @@
 'use strict';
 
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-
-import {HelloComponent} from './hello/hello.component';
-import {HomeComponent} from './home/home.component';
+import {Component} from "angular2/core";
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from "angular2/router";
+import {HelloComponent} from "./hello/hello.component";
+import {HomeComponent} from "./home/home.component";
 
 @Component({
     selector: 'spring-boot-angular2',
-    template: '<router-outlet></router-outlet>',
-    directives: [ROUTER_DIRECTIVES]
+    providers: [ROUTER_PROVIDERS],
+    directives: [ROUTER_DIRECTIVES],
+    templateUrl: './app/appComponent.html'
 })
 @RouteConfig([
         {path: '/home', name: 'HomePage', component: HomeComponent},

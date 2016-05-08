@@ -3,7 +3,7 @@
 <div class="jumbotron" *ngFor="#d of demos">
     <h1>{{d.id}}</h1>
     <p>{{d.description}}</p>
-    <p>{{d.updtimestamp}}</p>
+    <p>{{d.updtimestamp | date:'dd MM yyyy'}}</p>
 </div>
 <div>
     <h2>nav</h2>

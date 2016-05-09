@@ -1,0 +1,25 @@
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>updtimestamp</th>
+        <th>templateName</th>
+        <th>description</th>
+        <th>excelTemplate</th>
+        <th>photo</th>
+        <th>sqlQuery</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="#tf of listOfTemplateFile" (click)="onSelect(tf)">
+        <td>{{tf.id}}</td>
+        <td>{{tf.updtimestamp | date:'dd MM yyyy'}}</td>
+        <td>{{tf.templateName}}</td>
+        <td>{{tf.description}}</td>
+        <td>{{tf.excelTemplate}}</td>
+        <td>{{tf.photo}}</td>
+        <td>{{tf.sqlQuery}}</td>
+    </tr>
+    </tbody>
+</table>
+
